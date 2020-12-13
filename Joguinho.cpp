@@ -43,3 +43,62 @@ void showinstructions ()
     return;
 }
 
+//função que inicialisa o jogo
+void initialise (char board[][SIDE], int moves[])
+{
+    //inicia um numero random
+    srand(time(NULL));
+    //inicia o tabuleiro vazio
+    for (int i = 0; i < SIDE; i++)
+    {
+        /* code */
+        for (int j = 0; j < SIDE; j++)
+        {
+            /* code */
+            board[i][j] = ' ';
+
+        }
+        
+    }
+    
+    //preenche o tabuleiro com numeros
+    for (int i = 0; i < SIDE*SIDE; i++)
+    {
+        /* code */
+        moves[i] = i;
+    }
+
+    // torna as jogadas aleatorias
+    random_shuffle(moves, moves + SIDE*SIDE);
+
+    return;
+}
+
+//declara o vencedor do jogo
+
+void declarewinner (int whoseturn)
+{
+    if (whoseturn == COMPUTER)
+    {
+        printf("O Computador Ganhou!\n");
+    }
+    else
+    {
+        printf("Tu ganhaste!\n");
+    }
+     return;
+}
+
+// função que retorna um booleano se para as combinações cruzadas
+bool rowcrossed(char board[][SIDE])
+{
+    for (int i = 0; i < SIDE; i++)
+    {
+        if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ')
+        {
+            return(true);
+        }
+        
+    }
+    return(false);
+}
