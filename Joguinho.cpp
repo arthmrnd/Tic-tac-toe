@@ -144,4 +144,26 @@ void playvelha(int whoseturn)
     char board [SIDE][SIDE];
     int moves[SIDE*SIDE];
     
+    // iniciar o jogo
+    initialise(board, moves);
+
+    //chamando a função que mostra as instruçoes
+    showinstructions();
+
+    int moveindex = 0, x, y;
+
+    //jogando o jogo
+
+    while (gameover(board) == false && moveindex != SIDE*SIDE)
+    {
+        if (whoseturn == COMPUTER)
+        {
+            x = moves[moveindex] / SIDE;
+            y = moves[moveindex] % SIDE;
+            
+        }
+        
+    }
+    
+
 }
