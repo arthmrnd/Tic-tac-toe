@@ -89,7 +89,7 @@ void declarewinner (int whoseturn)
      return;
 }
 
-// função que retorna um booleano se para as combinações cruzadas
+// função que retorna um booleano se para as se cruza com as jogadas dos players
 bool rowcrossed(char board[][SIDE])
 {
     for (int i = 0; i < SIDE; i++)
@@ -101,4 +101,47 @@ bool rowcrossed(char board[][SIDE])
         
     }
     return(false);
+}
+
+// funçao se a coluna se cruzam 
+bool columncrossed(char board[][SIDE])
+{
+    for (int i = 0; i < SIDE; i++)
+    {
+        if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != ' ')
+        {
+            return(true);
+        }
+        
+    }
+    return(false);
+}
+
+//função para se a diagonal se cruzarem com a jogada dos players
+bool diagonalcrossed(char board[][SIDE])
+{
+    if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != ' ')
+        {
+            return(true);
+        }
+    if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != ' ')
+        {
+            return(true);
+        }
+    return(false);
+}
+
+//função que diz se o jogo terminou
+bool gameover(char board[][SIDE])
+{
+    return (rowcrossed(board) || columncrossed(board) || diagonalcrossed(board));
+} 
+
+//função par jogar o joguineo
+void playvelha(int whoseturn)
+{
+    // tabuleiro 3x3
+    char board [SIDE][SIDE];
+    int moves[SIDE*SIDE];
+    
 }
