@@ -160,10 +160,51 @@ void playvelha(int whoseturn)
         {
             x = moves[moveindex] / SIDE;
             y = moves[moveindex] % SIDE;
+            board [x][y] = COMPUTERMOVE;
+            printf("Computador colocou %c no espaço%d\n",COMPUTERMOVE, moves[moveindex]+1);
+            showboard(board);
+            moveindex++;
+            whoseturn = HUMAN;
             
+        }
+        else if (whoseturn = HUMAN)
+        {
+            x = moves[moveindex] / SIDE;
+            y = moves[moveindex] % SIDE;
+            board [x][y] = HUMANMOVE;
+            printf("Você colocou %c no espaço%d\n", HUMANMOVE, moves[moveindex]+1);
+            showboard(board);
+            moveindex++;
+            whoseturn = COMPUTER;
         }
         
     }
-    
+    //se o jogo empatar
+    if (gameover(board) == false && moveindex == SIDE*SIDE)
+    {
+        printf("Empatou\n");
+    }
+    //se tiver um vencedor
+    else
+    {
+        if (whoseturn == COMPUTER)
+        {
+            whoseturn = HUMAN;
+        }
+        else if (whoseturn == HUMAN)
+        {
+            whoseturn = COMPUTER;
+        }
+        
+        declarewinner(whoseturn);
+        return;    
+    }
+}
 
+int main ()
+{
+    setlocale(LC_ALL, "Portuguese");
+    playvelha(COMPUTER);
+    
+    return(0);
 }
