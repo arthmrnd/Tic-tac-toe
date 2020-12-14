@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include<locale.h>
+
 using namespace std;
 
 // define os players
@@ -28,9 +28,9 @@ void showboard (char board[][SIDE])
 //Uma função para mostrar as instruções
 void showinstructions ()
 {
-    setlocale(LC_ALL, "Portuguese");
+    
     printf("\t\t\t Jogo da Velha\n\n");
-    printf("Escolha o espaço de 1 a 9 no tabuleiro abaixo\n\n");
+    printf("Escolha a celula de 1 a 9 no tabuleiro abaixo\n\n");
     printf("\t\t\t 1 | 2 | 3 \n");
     printf("\t\t\t----------------\n");
     printf("\t\t\t 4 | 5 | 6 \n");
@@ -38,7 +38,7 @@ void showinstructions ()
     printf("\t\t\t 7 | 8 | 9 \n");
     printf("\t\t\t----------------\n");
 
-    printf("\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-n\n");
+    printf("\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\n");
 
     return;
 }
@@ -84,7 +84,7 @@ void declarewinner (int whoseturn)
     }
     else
     {
-        printf("Tu ganhaste!\n");
+        printf("Computador 2 ganhaste!\n");
     }
      return;
 }
@@ -161,7 +161,7 @@ void playvelha(int whoseturn)
             x = moves[moveindex] / SIDE;
             y = moves[moveindex] % SIDE;
             board [x][y] = COMPUTERMOVE;
-            printf("Computador colocou %c no espaço%d\n",COMPUTERMOVE, moves[moveindex]+1);
+            printf("\nComputador colocou %c no espaco %d\n",COMPUTERMOVE, moves[moveindex]+1);
             showboard(board);
             moveindex++;
             whoseturn = HUMAN;
@@ -172,7 +172,7 @@ void playvelha(int whoseturn)
             x = moves[moveindex] / SIDE;
             y = moves[moveindex] % SIDE;
             board [x][y] = HUMANMOVE;
-            printf("Você colocou %c no espaço%d\n", HUMANMOVE, moves[moveindex]+1);
+            printf("\nComputador 2 colocou %c no espaco %d\n", HUMANMOVE, moves[moveindex]+1);
             showboard(board);
             moveindex++;
             whoseturn = COMPUTER;
@@ -203,8 +203,7 @@ void playvelha(int whoseturn)
 
 int main ()
 {
-    setlocale(LC_ALL, "Portuguese");
     playvelha(COMPUTER);
-    
+    printf("\n\tAte mais ver\n");
     return(0);
 }
