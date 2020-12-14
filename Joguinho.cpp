@@ -17,7 +17,7 @@ int main()
         board();
         player=(player%2)?1:2;
 
-        cout << "Player " << player << ", enter a number:  ";
+        cout << "Jogador " << player << ", Digite um numero:  ";
         cin >> choice;
 
         mark=(player == 1) ? 'X' : 'O';
@@ -51,7 +51,7 @@ int main()
             square[9] = mark;
         else
         {
-            cout<<"Invalid move ";
+            cout<<"Jogada invalida ";
 
             player--;
             cin.ignore();
@@ -64,21 +64,21 @@ int main()
     board();
     if(i==1)
 
-        cout<<"==>\aPlayer "<<--player<<" win ";
+        cout<<"==>\aJogador "<<--player<<" Venceu ";
     else
-        cout<<"==>\aGame draw";
+        cout<<"==>\aJogo empatado";
 
     cin.ignore();
     cin.get();
     return 0;
 }
 
-/*********************************************
-    FUNCTION TO RETURN GAME STATUS
-    1 FOR GAME IS OVER WITH RESULT
-    -1 FOR GAME IS IN PROGRESS
-    O GAME IS OVER AND NO RESULT
-**********************************************/
+/*
+    FUNÇÃO QUE RETORNA O STATUS DO GAME
+    1 PARA O JOGO FINALIZADO COM VENCEDOR
+    -1 PARA JOGO EM ANDAMENTO
+    O JOGO TERMINOU EMPATADO
+*/
 
 int checkwin()
 {
@@ -116,17 +116,17 @@ int checkwin()
 }
 
 
-/*******************************************************************
-     FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
-********************************************************************/
+/*
+     FUNÇÃO PARA DESENHAR O JOGO DA VELHA COM MARCADORES DOS PLAYERS 
+*/
 
 
 void board()
 {
     system("cls");
-    cout << "\n\n\tTic Tac Toe\n\n";
+    cout << "\n\n\tJogo da Velha\n\n";
 
-    cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
+    cout << "Jogador 1 (X)  -  Jogador 2 (O)" << endl << endl;
     cout << endl;
 
     cout << "     |     |     " << endl;
