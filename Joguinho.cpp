@@ -73,12 +73,7 @@ int main()
     return 0;
 }
 
-/*
-    FUNÇÃO QUE RETORNA O STATUS DO GAME
-    1 PARA O JOGO FINALIZADO COM VENCEDOR
-    -1 PARA JOGO EM ANDAMENTO
-    O JOGO TERMINOU EMPATADO
-*/
+
 
 int checkwin()
 {
@@ -115,10 +110,6 @@ int checkwin()
         return -1;
 }
 
-
-/*
-     FUNÇÃO PARA DESENHAR O JOGO DA VELHA COM MARCADORES DOS PLAYERS 
-*/
 
 
 void board()
